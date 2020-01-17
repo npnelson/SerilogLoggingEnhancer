@@ -1,0 +1,23 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <Nullable>enable</Nullable>    
+    <RepositoryUrl>https://github.com/npnelson/SerilogLoggingEnhancer</RepositoryUrl>
+    <Description>Adds an opinionated set of properties to Serilog's SerilogRequestLogging Middleware</Description>
+    <Authors>npnelson</Authors>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="azure-pipelines.yml" />
+    <None Remove="GitVersion.yml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="NETToolBox.LinuxVersion" Version="1.0.0" />
+    <PackageReference Include="Serilog.AspNetCore" Version="3.2.0" />
+  </ItemGroup>
+  <ItemGroup>
+    <FrameworkReference Include="Microsoft.AspNetCore.App" />
+  </ItemGroup>
+</Project>
