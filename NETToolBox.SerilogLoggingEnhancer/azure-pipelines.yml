@@ -18,6 +18,22 @@ stages:
         version: 3.1.x
         installationPath: $(Agent.ToolsDirectory)/dotnet
 
+    - task: UseDotNet@2
+      displayName: 'Use .NET Core sdk 2.1'
+      inputs:
+        packageType: sdk
+        version: 2.1.x
+        installationPath: $(Agent.ToolsDirectory)/dotnet
+
+    - task: SonarCloudPrepare@1
+      inputs:
+        SonarCloud: 'SonarCloud'
+        organization: 'npnelson'
+        scannerMode: 'MSBuild'
+        projectKey: 'SerilogLoggingEnhancer'
+        projectName: 'SerilogLoggingEnhancer'
+         
+
     - script: 'dotnet tool restore'
       displayName: dotnet tool restore
 
@@ -29,6 +45,12 @@ stages:
       inputs:
         projects: '**/*.csproj'
         arguments: '--configuration $(BuildConfiguration) /p:Version=$(GitVersion.NugetVersion) /p:InformationalVersion=$(GitVersion.InformationalVersion)'
+
+    - task: SonarCloudAnalyze@1
+
+    - task: SonarCloudPublish@1
+      inputs:
+        pollingTimeoutSec: '300' 
     
     - task: DotNetCoreCLI@2
       displayName: dotnet pack
