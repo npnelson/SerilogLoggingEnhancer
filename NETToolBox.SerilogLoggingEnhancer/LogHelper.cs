@@ -8,7 +8,7 @@ using System.Reflection;
 using System.Runtime.InteropServices;
 
 
-namespace NETToolBoxSerilogLoggingEnhancer
+namespace NETToolBox.SerilogLoggingEnhancer
 {
     internal static class LogHelper<T>
     {
