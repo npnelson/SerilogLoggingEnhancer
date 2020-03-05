@@ -6,11 +6,18 @@
     <RepositoryUrl>https://github.com/npnelson/SerilogLoggingEnhancer</RepositoryUrl>
     <Description>Adds an opinionated set of properties to Serilog's SerilogRequestLogging Middleware</Description>
     <Authors>npnelson</Authors>
+    <ProjectGuid>be4cffe2-001d-443a-8e07-62c74fe0393a</ProjectGuid>
   </PropertyGroup>
 
   <ItemGroup>
     <None Remove="azure-pipelines.yml" />
     <None Remove="GitVersion.yml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <SonarQubeSetting Include="sonar.coverage.exclusions">
+      <Value>**</Value>
+    </SonarQubeSetting>    
   </ItemGroup>
 
   <ItemGroup>
