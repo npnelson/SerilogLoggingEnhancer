@@ -3,7 +3,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Serilog;
 using System;
 
-namespace NETToolBoxSerilogLoggingEnhancer
+namespace NETToolBox.SerilogLoggingEnhancer
 {
     [AttributeUsage(AttributeTargets.Class | AttributeTargets.Method)]
     public class SerilogMvcLoggingAttribute : ActionFilterAttribute

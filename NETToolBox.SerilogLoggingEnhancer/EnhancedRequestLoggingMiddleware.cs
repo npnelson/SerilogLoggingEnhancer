@@ -1,10 +1,9 @@
 ﻿using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
-using NETToolBoxSerilogLoggingEnhancer;
 using Serilog;
 using System.Threading.Tasks;
 
-namespace NETToolBoxSerilogLoggingEnhancer
+namespace NETToolBox.SerilogLoggingEnhancer
 {
     public class EnhancedRequestLoggingMiddleware
     {
