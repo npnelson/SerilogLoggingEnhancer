@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
+using NETToolBox.SerilogLoggingEnhancer;
 using Serilog;
 using System.Threading.Tasks;
 
