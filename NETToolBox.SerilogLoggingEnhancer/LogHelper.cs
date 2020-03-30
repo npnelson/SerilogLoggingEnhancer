@@ -28,6 +28,11 @@ namespace NETToolBox.SerilogLoggingEnhancer
             diagnosticContext.Set("OSVersion", RuntimeInformation.OSDescription);
             diagnosticContext.Set("ApplicationVersion", _version);
             diagnosticContext.Set("MachineName", Environment.MachineName);
+            var userName = request.HttpContext.User.FindFirst("preferred_username");
+            if (userName != null)
+            {
+                diagnosticContext.Set("UserName", userName.Value);
+            }
 
             if (RuntimeInformation.IsOSPlatform(OSPlatform.Linux))
             {
